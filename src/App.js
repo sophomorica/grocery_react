@@ -23,7 +23,9 @@ class App extends React.Component{
       .toString(16)
       .substring(1);
   };
-
+  handleClick = id =>{
+    this.setState({})
+  }
   addItem = (name) =>{
     const thing = {name, id: this.getUniqId(), bought: false}
     
@@ -46,6 +48,7 @@ class App extends React.Component{
         <List 
         name = "Grocery List"
         items = {this.state.things}
+        thingClick = {this.handleClick}
         />
         </div>
     )

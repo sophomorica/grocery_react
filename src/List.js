@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Thing from "./Thing"
 
 
 const List = (props) => {
@@ -7,7 +7,7 @@ const List = (props) => {
   <div>
     <h1>{props.name}</h1>
     <ul>
-      {props.items.map( item => <li key = {item.id} >{item.name}</li>)}
+      {props.items.map( item => <Thing key ={item.id}{...item} thingClick={props.thingClick}/>)}
     </ul>
   </div>
   )
