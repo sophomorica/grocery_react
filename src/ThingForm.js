@@ -10,13 +10,14 @@ class ThingForm extends React.Component{
   }
 
 
-  handleSubmit(e){
+  handleSubmit = (e) => {
     e.preventDefault()
     this.props.addItem(this.state.name)
 
     this.setState({name: "",})
+
   } 
-  handleChange(e){
+  handleChange = (e) => {
     this.setState({name: e.target.value})
   }
   render(){
@@ -26,7 +27,7 @@ class ThingForm extends React.Component{
        <input
        required
        placeholder = "What Else to Buy?"
-       //value = {this.state.name}
+       value = {this.state.name}
        name = "name"
        onChange = {this.handleChange}/>
      </form>
