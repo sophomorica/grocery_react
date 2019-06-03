@@ -1,4 +1,5 @@
 import React from 'react';
+import List from "./List"
 //mport './App.css';
 
 class App extends React.Component{
@@ -7,7 +8,7 @@ class App extends React.Component{
     super(props);
 
     this.state = {
-      lists: [
+      things: [
         {id: 1, name: "Milk", bought: true,},
         {id: 1, name: "bread", bought: false,},
         {id: 1, name: "cheese", bought: false,},
@@ -15,19 +16,20 @@ class App extends React.Component{
     };
   }
   
-  renderList = () => {
-    const { lists, } = this.state;
-    return lists.map(list =>
-      <li key={list.id}>{list.name}</li>
+  renderthing = () => {
+    const { things, } = this.state;
+    return things.map(thing =>
+      <li key={thing.id}>{thing.name}</li>
       )
   };
   
   render() {
     return (
       <div>
-        <ul>
-          { this.renderList()}
-        </ul>
+        <List 
+        name = "Grocery List"
+        items = {this.state.things}
+        />
         </div>
     )
   }
